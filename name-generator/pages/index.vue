@@ -31,7 +31,7 @@
               <v-btn flat color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
             </v-date-picker>
           </v-dialog>
-          <v-btn>Generate You Japanese Name</v-btn>
+          <v-btn @click="generate">Generate You Japanese Name</v-btn>
         </v-form>
       </v-flex>
     </v-layout>
@@ -40,18 +40,29 @@
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
-
+import axios from 'axios'
 export default {
   data () {
     return {
       name: null,
       gender: "male",
       date: null,
-      modal: false
+      modal: false,
+      newName: null
     }
   },
   components: {
     AppLogo
+  },
+  methods: {
+    generate: function(event) {
+      /*axios.post('https://samurai-name.herokuapp.com/names/fetch',{name:this.name,male:}).then(function(response){
+        this.newName = response.data
+      }).catch(function(error){
+        console.log("取得でできず")
+      })*/
+      alert("これから実装")
+    }
   }
 }
 </script>
