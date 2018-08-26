@@ -49,5 +49,7 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+.wf-hannari { font-family: "Hannari"; }
 </style>
 

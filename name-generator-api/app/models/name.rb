@@ -10,17 +10,17 @@ class Name < ApplicationRecord
     if with_sex(sex).roman_letter_like(original_name[0..1]).present?
       candidates = with_sex(sex).roman_letter_like(original_name[0..1])
       logger.debug "プライオリティ1"
-      return candidates[row_num % candidates.count].japanese
+      return candidates[row_num % candidates.count]
     end
 
     if with_sex(sex).roman_letter_like(original_name[0]).present?
       logger.debug "プライオリティ2"
       candidates = with_sex(sex).roman_letter_like(original_name[0])
-      return candidates[row_num % candidates.count].japanese
+      return candidates[row_num % candidates.count]
     end
 
     candidates = with_sex(sex)
     logger.debug "プライオリティ3"
-    candidate[row_num % candidates.count].japanese
+    candidate[row_num % candidates.count]
   end
 end
